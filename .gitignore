@@ -9,6 +9,8 @@ Assets/AssetStoreTools*
 /LD42/Assets/3rd Party.meta
 /LD42/Assets/VacuumShaders
 /LD42/Assets/VacuumShaders.meta
+/LD42/Assets/Plugins
+/LD42/Assets/Plugins.meta
 
 # Visual Studio cache directory
 .vs/
