@@ -17,6 +17,20 @@ ModelImporter:
     100022: Barrier_001
     100024: Screws
     100026: MetalStructure_001
+    100028: BottomWoodPlank_001
+    100030: BottomWoodPlank_002
+    100032: LeftShelf
+    100034: MetalStructure_002
+    100036: MetalStructure_005
+    100038: MetalStructureFeet
+    100040: RightShelf
+    100042: Screws_001
+    100044: Screws_002
+    100046: TopWoodPlank_001
+    100048: TopWoodPlank_002
+    100050: Wall_001
+    100052: Wall_002
+    100054: WallLamp
     400000: Cube
     400002: Cube_001
     400004: Cube_002
@@ -31,6 +45,20 @@ ModelImporter:
     400022: Barrier_001
     400024: Screws
     400026: MetalStructure_001
+    400028: BottomWoodPlank_001
+    400030: BottomWoodPlank_002
+    400032: LeftShelf
+    400034: MetalStructure_002
+    400036: MetalStructure_005
+    400038: MetalStructureFeet
+    400040: RightShelf
+    400042: Screws_001
+    400044: Screws_002
+    400046: TopWoodPlank_001
+    400048: TopWoodPlank_002
+    400050: Wall_001
+    400052: Wall_002
+    400054: WallLamp
     2100000: unnamed
     2100002: Barrier
     2300000: Cube
@@ -46,6 +74,20 @@ ModelImporter:
     2300020: Barrier_001
     2300022: Screws
     2300024: MetalStructure_001
+    2300026: BottomWoodPlank_001
+    2300028: BottomWoodPlank_002
+    2300030: LeftShelf
+    2300032: MetalStructure_002
+    2300034: MetalStructure_005
+    2300036: MetalStructureFeet
+    2300038: RightShelf
+    2300040: Screws_001
+    2300042: Screws_002
+    2300044: TopWoodPlank_001
+    2300046: TopWoodPlank_002
+    2300048: Wall_001
+    2300050: Wall_002
+    2300052: WallLamp
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -59,6 +101,20 @@ ModelImporter:
     3300020: Barrier_001
     3300022: Screws
     3300024: MetalStructure_001
+    3300026: BottomWoodPlank_001
+    3300028: BottomWoodPlank_002
+    3300030: LeftShelf
+    3300032: MetalStructure_002
+    3300034: MetalStructure_005
+    3300036: MetalStructureFeet
+    3300038: RightShelf
+    3300040: Screws_001
+    3300042: Screws_002
+    3300044: TopWoodPlank_001
+    3300046: TopWoodPlank_002
+    3300048: Wall_001
+    3300050: Wall_002
+    3300052: WallLamp
     4300000: Cube_002
     4300002: Cube
     4300004: Cube_001
@@ -72,6 +128,20 @@ ModelImporter:
     4300020: Barrier_001
     4300022: Screws
     4300024: MetalStructure_001
+    4300026: RightShelf
+    4300028: MetalStructure_005
+    4300030: Screws_002
+    4300032: TopWoodPlank_002
+    4300034: BottomWoodPlank_002
+    4300036: LeftShelf
+    4300038: BottomWoodPlank_001
+    4300040: TopWoodPlank_001
+    4300042: Screws_001
+    4300044: MetalStructure_002
+    4300046: MetalStructureFeet
+    4300048: Wall_002
+    4300050: Wall_001
+    4300052: WallLamp
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -113,7 +183,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

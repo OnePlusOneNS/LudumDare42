@@ -58,7 +58,7 @@ public class BoxLineChecker : MonoBehaviour {
 			_onTimerChange.Invoke();
 			yield return null;
 		}
-		Time.timeScale = 0f;
+		_gameTimer._timer = _originalTimer;
 		_onTimerZero.Invoke();
 		Debug.Log("GameOver");
 	}

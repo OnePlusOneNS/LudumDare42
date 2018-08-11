@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			_inTheAir = true;
 			_rigidbody.AddForce(Vector3.up * _playerJumpForce * Time.deltaTime, ForceMode.Impulse);
+			StartCoroutine(JumpTimeOutRoutine());
 		}
 	}
 
@@ -33,6 +34,22 @@ public class PlayerController : MonoBehaviour {
 		if(c.gameObject.tag == "Ground") 
 		{
 			_onPlayerFallDown.Invoke();
+		}
+	}
+
+	private IEnumerator JumpTimeOutRoutine() 
+	{
+		float jumpForceTimer = 3f;
+		while(_inTheAir) 
+		{
+			if(jumpForceTimer<=0) 
+			{
+				_inTheAir = false;
+			} else 
+			{
+				jumpForceTimer -= Time.deltaTime;
+			}
+			yield return null;
 		}
 	}
 }

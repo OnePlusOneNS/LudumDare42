@@ -10,6 +10,7 @@ public class StorageBox : MonoBehaviour
 	[SerializeField] private UnityEvent _onDestroy;
 
 	[SerializeField] private Material[] _cardboardMaterials;
+
 	private void Start() 
 	{
 		GetComponent<Renderer>().material = _cardboardMaterials[Random.Range(0,_cardboardMaterials.Length)];
