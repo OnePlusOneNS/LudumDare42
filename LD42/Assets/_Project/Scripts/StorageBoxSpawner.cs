@@ -41,7 +41,7 @@ public class StorageBoxSpawner : MonoBehaviour
 		while(_storageBoxesToSpawn > 0) {
 			yield return new WaitForSeconds(_startTimeBetweenBoxSpawns);
 			int randomValue = GetRandomLocationFromStorageBoxes();
-			Instantiate(_storageBoxPrefab, _spawnLocations[randomValue], Quaternion.identity);
+			Instantiate(_storageBoxPrefab, _spawnLocations[randomValue], _storageBoxPrefab.transform.rotation);
 			_spawnLocations.RemoveAt(randomValue);
 		}
 		yield return new WaitForSeconds(_timerBetweenLevels);
