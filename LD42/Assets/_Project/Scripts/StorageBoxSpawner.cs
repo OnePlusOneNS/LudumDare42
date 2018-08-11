@@ -8,6 +8,8 @@ public class StorageBoxSpawner : MonoBehaviour
 	[SerializeField] private Transform _leftBarrier;
 	[SerializeField] private Transform _rightBarrier;
 	[SerializeField] private int _storageBoxAmountPerLevel;
+	[SerializeField] private float _startTimeBetweenBoxSpawns;
+	[SerializeField] private float _timerBetweenLevels;
 
 	private List<StorageBox> _storageBoxesToSpawn = new List<StorageBox>();
 	private List<Vector3> _spawnLocations = new List<Vector3>();
@@ -19,7 +21,6 @@ public class StorageBoxSpawner : MonoBehaviour
 		for(int i = 0; i<_storageBoxAmountPerLevel; i++) 
 		{
 			StorageBox newStorageBox = new StorageBox();
-			newStorageBox.SetID(i);
 			_storageBoxesToSpawn.Add(newStorageBox);
 		}
 		SpawnBoxes();
@@ -27,10 +28,36 @@ public class StorageBoxSpawner : MonoBehaviour
 
 	private void SpawnBoxes() 
 	{
-		for(int i = 0; i<_storageBoxAmountPerLevel; i++) 
+		/*for(int i = 0; i<_storageBoxAmountPerLevel; i++) 
 		{
 			Instantiate(_storageBoxPrefab, _spawnLocations[i], Quaternion.identity);
+		}*/
+
+		StartCoroutine(SpawnBoxesRoutine());
+
+	}
+
+	private IEnumerator SpawnBoxesRoutine() 
+	{
+		while(_storageBoxesToSpawn.Count > 0) {
+			yield return new WaitForSeconds(_startTimeBetweenBoxSpawns);
+			int randomValue = GetRandomLocationFromStorageBoxes();
+			Instantiate(_storageBoxPrefab, _spawnLocations[randomValue], Quaternion.identity);
+			_spawnLocations.RemoveAt(randomValue);
 		}
+		ProgressToNextLevel();
+	}
+
+	private void ProgressToNextLevel() 
+	{
+		Debug.Log("progresse weiter");
+	}
+
+	private int GetRandomLocationFromStorageBoxes() 
+	{
+		int randomValue = Random.Range(0, _storageBoxesToSpawn.Count);
+		_storageBoxesToSpawn.RemoveAt(randomValue);
+		return randomValue;
 	}
 
 	private void CalculateSpawnSegments() 
