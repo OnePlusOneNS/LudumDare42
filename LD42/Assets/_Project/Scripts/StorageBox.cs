@@ -13,7 +13,7 @@ public class StorageBox : MonoBehaviour
 		if(c.gameObject.tag == "Ground") 
 		{
 			_onDestroy.Invoke();
-			Destroy(this);
+			Destroy(this.gameObject);
 		}
 	}
 

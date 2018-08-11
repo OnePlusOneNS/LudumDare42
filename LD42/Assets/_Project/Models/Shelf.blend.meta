@@ -12,6 +12,9 @@ ModelImporter:
     100012: TopWoodPlank
     100014: Ground
     100016: Wall
+    100018: Plane
+    100020: Barrier
+    100022: Barrier_001
     400000: Cube
     400002: Cube_001
     400004: Cube_002
@@ -21,7 +24,11 @@ ModelImporter:
     400012: TopWoodPlank
     400014: Ground
     400016: Wall
+    400018: Plane
+    400020: Barrier
+    400022: Barrier_001
     2100000: unnamed
+    2100002: Barrier
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -30,6 +37,9 @@ ModelImporter:
     2300010: TopWoodPlank
     2300012: Ground
     2300014: Wall
+    2300016: Plane
+    2300018: Barrier
+    2300020: Barrier_001
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -38,6 +48,9 @@ ModelImporter:
     3300010: TopWoodPlank
     3300012: Ground
     3300014: Wall
+    3300016: Plane
+    3300018: Barrier
+    3300020: Barrier_001
     4300000: Cube_002
     4300002: Cube
     4300004: Cube_001
@@ -46,11 +59,14 @@ ModelImporter:
     4300010: TopWoodPlank
     4300012: Ground
     4300014: Wall
+    4300016: Plane
+    4300018: Barrier
+    4300020: Barrier_001
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1

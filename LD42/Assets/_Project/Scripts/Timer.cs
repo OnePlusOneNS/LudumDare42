@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Score : ScriptableObject {
+public class Timer : ScriptableObject {
 
-	public int _score;
+	public float _timer;
 }
