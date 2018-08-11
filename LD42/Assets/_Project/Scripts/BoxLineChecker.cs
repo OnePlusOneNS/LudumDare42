@@ -7,12 +7,14 @@ public class BoxLineChecker : MonoBehaviour {
 
 	[SerializeField] private UnityEvent _onTimerChange;
 	[SerializeField] private UnityEvent _onTimerReset;
+	[SerializeField] private UnityEvent _onTimerZero;
 	[SerializeField] private Timer _gameTimer;
 
 	[SerializeField] private Color _colorInactive;
 	[SerializeField] private Color _colorActive;
 
 	private float _originalTimer;
+	private int _amountInsideBarrier;
 	private Material _mat;
 
 	private void Start() 
@@ -26,6 +28,7 @@ public class BoxLineChecker : MonoBehaviour {
 	{
 		if(other.GetComponent<StorageBox>() != null) 
 		{
+			_amountInsideBarrier++;
 			_mat.SetColor("_BarrierColor", _colorActive);
 			StartCoroutine(StartCounter());
 		}
@@ -35,10 +38,15 @@ public class BoxLineChecker : MonoBehaviour {
 	{
 		if(other.GetComponent<StorageBox>() != null) 
 		{
-			_mat.SetColor("_BarrierColor", _colorInactive);
-			StopAllCoroutines();
-			_gameTimer._timer = _originalTimer;
-			_onTimerReset.Invoke();
+			_amountInsideBarrier--;
+			if(_amountInsideBarrier == 0) 
+			{
+				_mat.SetColor("_BarrierColor", _colorInactive);
+				StopAllCoroutines();
+				_gameTimer._timer = _originalTimer;
+				_onTimerReset.Invoke();
+			}
+			
 		}
 	}
 
@@ -50,6 +58,9 @@ public class BoxLineChecker : MonoBehaviour {
 			_onTimerChange.Invoke();
 			yield return null;
 		}
+		Time.timeScale = 0f;
+		_onTimerZero.Invoke();
+		Debug.Log("GameOver");
 	}
 
 }

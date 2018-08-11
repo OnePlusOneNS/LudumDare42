@@ -84,6 +84,6 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _BarrierColor: {r: 0.3372549, g: 0.69803923, b: 0.3882353, a: 0}
+    - _BarrierColor: {r: 0.8584906, g: 0.028346404, b: 0.028346404, a: 0}
     - _Color: {r: 0.33917767, g: 0.6981132, b: 0.38784686, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

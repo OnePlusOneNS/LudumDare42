@@ -15,6 +15,8 @@ ModelImporter:
     100018: Plane
     100020: Barrier
     100022: Barrier_001
+    100024: Screws
+    100026: MetalStructure_001
     400000: Cube
     400002: Cube_001
     400004: Cube_002
@@ -27,6 +29,8 @@ ModelImporter:
     400018: Plane
     400020: Barrier
     400022: Barrier_001
+    400024: Screws
+    400026: MetalStructure_001
     2100000: unnamed
     2100002: Barrier
     2300000: Cube
@@ -40,6 +44,8 @@ ModelImporter:
     2300016: Plane
     2300018: Barrier
     2300020: Barrier_001
+    2300022: Screws
+    2300024: MetalStructure_001
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -51,6 +57,8 @@ ModelImporter:
     3300016: Plane
     3300018: Barrier
     3300020: Barrier_001
+    3300022: Screws
+    3300024: MetalStructure_001
     4300000: Cube_002
     4300002: Cube
     4300004: Cube_001
@@ -62,6 +70,8 @@ ModelImporter:
     4300016: Plane
     4300018: Barrier
     4300020: Barrier_001
+    4300022: Screws
+    4300024: MetalStructure_001
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
