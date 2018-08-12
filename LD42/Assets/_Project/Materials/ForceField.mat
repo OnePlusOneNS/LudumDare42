@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 1e62e62dedb2e4743afd69242ed6ca67, type: 3}
   m_ShaderKeywords: _FORCEFIELDSWITCH_ON
   m_LightmapFlags: 0
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}

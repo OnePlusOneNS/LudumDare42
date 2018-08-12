@@ -34,6 +34,17 @@ public class BoxLineChecker : MonoBehaviour {
 		}
 	}
 
+	public void StompFinish() 
+	{
+		_amountInsideBarrier = 0;
+		StopAllCoroutines();
+		_mat.SetColor("_BarrierColor", _colorInactive);
+		_gameTimer._timer = _originalTimer;
+		_onTimerReset.Invoke();
+	}
+
+
+
 	private void OnTriggerExit(Collider other) 
 	{
 		if(other.GetComponent<StorageBox>() != null) 
@@ -46,7 +57,6 @@ public class BoxLineChecker : MonoBehaviour {
 				_gameTimer._timer = _originalTimer;
 				_onTimerReset.Invoke();
 			}
-			
 		}
 	}
 

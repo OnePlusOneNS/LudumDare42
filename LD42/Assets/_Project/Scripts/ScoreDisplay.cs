@@ -9,7 +9,7 @@ public class ScoreDisplay : MonoBehaviour {
 
 	private Text _scoreTextField;
 
-	private void Start() 
+	private void Awake() 
 	{
 		_scoreTextField = GetComponent<Text>();
 		_scoreTextField.text = "Score: " + 0.ToString();

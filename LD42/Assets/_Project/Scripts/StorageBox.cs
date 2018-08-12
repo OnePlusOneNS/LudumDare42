@@ -10,10 +10,14 @@ public class StorageBox : MonoBehaviour
 	[SerializeField] private UnityEvent _onDestroy;
 
 	[SerializeField] private Material[] _cardboardMaterials;
+	[SerializeField] private int _stompSpeed;
+
+	private SkinnedMeshRenderer _skinnedMeshRenderer;
 
 	private void Start() 
 	{
 		GetComponent<Renderer>().material = _cardboardMaterials[Random.Range(0,_cardboardMaterials.Length)];
+		_skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
 	}
 
 	private void OnCollisionEnter(Collision c) 
@@ -23,6 +27,36 @@ public class StorageBox : MonoBehaviour
 			Instantiate(_boxDestroyParticleSystem, transform.position, transform.rotation);
 			_onDestroy.Invoke();
 			Destroy(this.gameObject);
+		}
+	}
+
+	private void OnTriggerEnter(Collider c) 
+	{	
+		if(c.gameObject.tag == "TopPlank") 
+		{
+			_skinnedMeshRenderer.SetBlendShapeWeight(0,50f);
+			
+			//StartCoroutine(StompBox());
+		}
+	}
+
+	private void OnTriggerExit(Collider c) 
+	{
+		if(c.gameObject.tag == "TopPlank") 
+		{
+			_onDestroy.Invoke();
+			Destroy(this.gameObject);
+		}
+	}
+
+	private IEnumerator StompBox() 
+	{
+		float counter = 0f;
+		while(counter < 100f) 
+		{
+			counter += Time.deltaTime * _stompSpeed;
+			_skinnedMeshRenderer.SetBlendShapeWeight(0, counter);
+			yield return null;
 		}
 	}
 

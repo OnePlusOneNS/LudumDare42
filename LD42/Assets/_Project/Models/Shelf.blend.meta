@@ -31,6 +31,9 @@ ModelImporter:
     100050: Wall_001
     100052: Wall_002
     100054: WallLamp
+    100056: Cylinder
+    100058: Cylinder_001
+    100060: Cylinder_002
     400000: Cube
     400002: Cube_001
     400004: Cube_002
@@ -59,6 +62,9 @@ ModelImporter:
     400050: Wall_001
     400052: Wall_002
     400054: WallLamp
+    400056: Cylinder
+    400058: Cylinder_001
+    400060: Cylinder_002
     2100000: unnamed
     2100002: Barrier
     2300000: Cube
@@ -88,6 +94,9 @@ ModelImporter:
     2300048: Wall_001
     2300050: Wall_002
     2300052: WallLamp
+    2300054: Cylinder
+    2300056: Cylinder_001
+    2300058: Cylinder_002
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -115,6 +124,9 @@ ModelImporter:
     3300048: Wall_001
     3300050: Wall_002
     3300052: WallLamp
+    3300054: Cylinder
+    3300056: Cylinder_001
+    3300058: Cylinder_002
     4300000: Cube_002
     4300002: Cube
     4300004: Cube_001
@@ -142,6 +154,9 @@ ModelImporter:
     4300048: Wall_002
     4300050: Wall_001
     4300052: WallLamp
+    4300054: Cylinder_002
+    4300056: Cylinder_001
+    4300058: Cylinder
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

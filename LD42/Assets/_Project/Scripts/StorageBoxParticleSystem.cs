@@ -6,7 +6,6 @@ public class StorageBoxParticleSystem : MonoBehaviour {
 
 	private void Start() 
 	{
-		Debug.Log("Führe Start aus");
 		ParticleSystem particleSystem = GetComponent<ParticleSystem>();
 		particleSystem.Play();
 		StartCoroutine(WaitForKill(particleSystem));

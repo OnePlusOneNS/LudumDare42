@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StorageBoxSpawner : MonoBehaviour 
 {
@@ -10,13 +11,17 @@ public class StorageBoxSpawner : MonoBehaviour
 	[SerializeField] private int _storageBoxAmountPerLevel;
 	[SerializeField] private float _startTimeBetweenBoxSpawns;
 	[SerializeField] private float _timerBetweenLevels;
+	[SerializeField] private UnityEvent _onLevelChange;
 
+	private int _level;
 	private int _storageBoxesToSpawn;
 	private List<Vector3> _spawnLocations = new List<Vector3>();
 	private List<Vector3> _calculatedSpawnLocations = new List<Vector3>();
 
 	private void Start() 
 	{
+		_level = 1;
+		_onLevelChange.Invoke();
 		_storageBoxesToSpawn = _storageBoxAmountPerLevel;
 		CalculateSpawnSegments();
 		SpawnBoxes();
@@ -50,6 +55,8 @@ public class StorageBoxSpawner : MonoBehaviour
 
 	private void ProgressToNextLevel() 
 	{
+		_level++;
+		_onLevelChange.Invoke();
 		_storageBoxesToSpawn = _storageBoxAmountPerLevel;
 		if(_startTimeBetweenBoxSpawns >= 1.6f) 
 		{

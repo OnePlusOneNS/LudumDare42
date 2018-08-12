@@ -23,13 +23,15 @@ public class PlayerController : MonoBehaviour {
 		_rigidbody = GetComponent<Rigidbody>();
 	}
 
-	private void Update () 
+	private void FixedUpdate () 
 	{
 		_rigidbody.AddForce(new Vector3(0,0,Input.GetAxis("Horizontal")*Time.deltaTime*_playerHorizontalSpeed),ForceMode.Acceleration);
 	
 		if(Input.GetButton("Jump") && !_inTheAir) 
 		{
+			_rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0, _rigidbody.velocity.z);
 			_inTheAir = true;
+			//transform.Translate(Vector3.up * _playerJumpForce * Time.deltaTime, Space.World);
 			_rigidbody.AddForce(Vector3.up * _playerJumpForce * Time.deltaTime, ForceMode.Impulse);
 			StartCoroutine(JumpTimeOutRoutine());
 		}
@@ -44,8 +46,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		if(c.gameObject.tag == "PowerUp") 
 		{
-			_onPickUpPowerUp.Invoke();
 			_activePowerUp._powerUpItem = c.GetComponent<PowerUpItem>()._powerUpItem;
+			_onPickUpPowerUp.Invoke();
 			Destroy(c.gameObject);
 		}
 	}
