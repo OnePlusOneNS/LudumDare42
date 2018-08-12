@@ -8,12 +8,18 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField] private float _playerHorizontalSpeed;
 	[SerializeField] private float _playerJumpForce;
 	[SerializeField] private UnityEvent _onPlayerFallDown;
+	[SerializeField] private UnityEvent _onPickUpPowerUp;
+	[SerializeField] private UnityEvent _onCollision;
+	[SerializeField] private PowerUp _powerUp;
+	[SerializeField] private ActivePowerUp _activePowerUp;
 
 	private Rigidbody _rigidbody;
 	private bool _inTheAir;
+	private Vector3 _starPos;
 
 	private void Start() 
 	{
+		_starPos = transform.position;
 		_rigidbody = GetComponent<Rigidbody>();
 	}
 
@@ -27,6 +33,21 @@ public class PlayerController : MonoBehaviour {
 			_rigidbody.AddForce(Vector3.up * _playerJumpForce * Time.deltaTime, ForceMode.Impulse);
 			StartCoroutine(JumpTimeOutRoutine());
 		}
+
+		if(Input.GetButtonDown("PowerUp")) 
+		{
+			_powerUp.ActivatePowerUp();
+		}
+	}
+
+	private void OnTriggerEnter(Collider c) 
+	{
+		if(c.gameObject.tag == "PowerUp") 
+		{
+			_onPickUpPowerUp.Invoke();
+			_activePowerUp._powerUpItem = c.GetComponent<PowerUpItem>()._powerUpItem;
+			Destroy(c.gameObject);
+		}
 	}
 
 	private void OnCollisionEnter(Collision c) {
@@ -35,6 +56,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			_onPlayerFallDown.Invoke();
 		}
+		_onCollision.Invoke();
 	}
 
 	private IEnumerator JumpTimeOutRoutine() 
@@ -51,5 +73,10 @@ public class PlayerController : MonoBehaviour {
 			}
 			yield return null;
 		}
+	}
+
+	public void PlayerReset() 
+	{
+		transform.position = _starPos;
 	}
 }
