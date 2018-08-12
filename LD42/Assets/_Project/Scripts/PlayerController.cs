@@ -35,7 +35,10 @@ public class PlayerController : MonoBehaviour {
 			_rigidbody.AddForce(Vector3.up * _playerJumpForce * Time.deltaTime, ForceMode.Impulse);
 			StartCoroutine(JumpTimeOutRoutine());
 		}
+	}
 
+	private void Update()
+	{
 		if(Input.GetButtonDown("PowerUp")) 
 		{
 			_powerUp.ActivatePowerUp();

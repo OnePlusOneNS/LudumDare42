@@ -58,12 +58,18 @@ public class StorageBoxSpawner : MonoBehaviour
 		_level++;
 		_onLevelChange.Invoke();
 		_storageBoxesToSpawn = _storageBoxAmountPerLevel;
-		if(_startTimeBetweenBoxSpawns >= 1.6f) 
+		if(_startTimeBetweenBoxSpawns >= 1f) 
 		{
 			_startTimeBetweenBoxSpawns = _startTimeBetweenBoxSpawns - 0.2f;
 		} else 
 		{
-			Debug.Log("Final Level Reached Increase Score To The Max");
+			if(_timerBetweenLevels>=1) 
+			{
+				_timerBetweenLevels = _timerBetweenLevels - 0.4f;
+			} else 
+			{
+				Debug.Log("Final Level Reached Increase Score To The Max");
+			}
 		}
 		SpawnBoxes();
 	}
