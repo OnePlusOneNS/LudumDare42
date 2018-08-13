@@ -16,7 +16,6 @@ public class StorageBox : MonoBehaviour
 
 	private void Start() 
 	{
-		transform.rotation = new Quaternion(transform.rotation.x,transform.rotation.y, Random.Range(0,360), transform.rotation.w);
 		GetComponent<Renderer>().material = _cardboardMaterials[Random.Range(0,_cardboardMaterials.Length)];
 		_skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
 	}
